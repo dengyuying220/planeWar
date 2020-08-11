@@ -26,9 +26,25 @@ div {
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
 }
 
 #startBtn:hover {
     cursor: pointer;
+}
+
+#data_records {
+    padding: 10px 0 0 10px;
+
+}
+
+.data_records_l {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#health_point {}
+
+#health_point .health_icon {
+    width: 40px;
 }
