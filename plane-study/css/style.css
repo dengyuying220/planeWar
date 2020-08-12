@@ -33,8 +33,10 @@ div {
 }
 
 #data_records {
-    padding: 10px 0 0 10px;
-
+    padding: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 }
 
 .data_records_l {
@@ -43,8 +45,65 @@ div {
 
 }
 
-#health_point {}
+.data_records_l>div,
+.data_records_l>img {
+    margin-bottom: 10px;
+}
+
+#health_point {
+    width: 200px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+#hp_progress {
+    width: 100px;
+    height: 10px;
+    border: 2px solid #964a2c;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+
+#hp_index {
+    width: 50px;
+    height: 100%;
+    background-color: #ec4f00;
+}
 
 #health_point .health_icon {
     width: 40px;
+}
+
+.w_m_score_icon {
+    width: 100px;
+}
+
+.w_m_score img {
+    float: left;
+    width: 15px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+#my_score img {
+    float: left;
+    width: 20px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#distance img {
+    float: right;
+    width: 15px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#distance {
+    margin-top: 100px;
 }
