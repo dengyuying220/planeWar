@@ -2,6 +2,47 @@
 var myPlane;
 var battleBG = document.getElementById("battleField");
 var startBG = document.getElementById("startBG");
+var distance = 0; //飞行距离
+var score = 0; //我的分数
+var isPause = false;
+var imgPath = './img/';
+var meter = document.createElement('img');
+meter.src = imgPath + 'path_f_1.png';
+meter.style.width = '20px';
+var distanceDiv = document.getElementById('distance');
+var scoreDiv = document.getElementById('my_score');
+startBG.onclick = function () {
+  init();
+  setInterval(function () {
+    if (!isPause) {
+      distance++;
+      score++;
+      updateDistance();
+
+    }
+
+  }, 80);
+
+};
+
+function updateDistance() {
+  var len = distance.toString();
+
+
+  battleBG.style.backgroundPosition = '0px ' + distance + 'px';
+  scoreDiv.innerHTML = "";
+  distanceDiv.innerHTML = "";
+  distanceDiv.appendChild(meter);
+  for (var i = len.length - 1, j = 0; i >= 0; i--, j++) {
+    var dimg = document.createElement('img');
+    dimg.src = imgPath + 'path_' + len[i] + '.png';
+    distanceDiv.appendChild(dimg);
+    var simg = document.createElement('img');
+    simg.src = imgPath + 'number_' + len[j] + '.png';
+    scoreDiv.appendChild(simg);
+  }
+}
+
 function init() {
   startBG.style.display = "none";
   createMyPlane();
@@ -32,7 +73,3 @@ function movePlane(e) {
   myPlane.style.top = planeY + "px";
   myPlane.style.left = planeX + "px";
 }
-
-startBG.onclick = function () {
-  init();
-};
