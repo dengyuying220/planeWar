@@ -1,55 +1,56 @@
 <!DOCTYPE html>
 
 <head>
-    <meta charset="utf-8">
-    <title>plane war</title>
-    <link href="./css/style.css" type="text/css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <title>plane war</title>
+  <link href="./css/style.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
-    <!-- <ul id="ul1">
+  <!-- <ul id="ul1">
         <li>x</li>
         <li>y</li>
     </ul> -->
-    <div id="container">
-        <div id="battleField">
-            <div id="startBG">
-                <img src="./img/start.png" id="startBtn" />
+  <div id="container">
+    <div id="wrapper">
+      <div id="startBG">
+        <img src="./img/start.png" id="startBtn" />
+      </div>
+      <div id="battleField">
+        <!-- <div class="myBullet"></div> -->
+        <div id="data_records">
+          <div class="data_records_l">
+            <div id="health_point">
+              <img class="health_icon" src="./img/hp_0.png" />
+              <div id="hp_progress">
+                <div id="hp_index"></div>
+              </div>
             </div>
-            <div id="data_records">
-                <div class="data_records_l">
-                    <div id="health_point">
-                        <img class="health_icon" src="./img/hp_0.png">
-                        <div id="hp_progress">
-                            <div id="hp_index"></div>
-                        </div>
-                    </div>
-                    <img class="w_m_score_icon" src="./img/maxScores.png">
-                    <div class="w_m_score">
-                        <img class="icon" src="./img/number_1.png">
-                        <img class="icon" src="./img/number_2.png">
-                        <img class="icon" src="./img/number_3.png">
-                        <img class="icon" src="./img/number_4.png">
-                    </div>
-                </div>
-                <div class="data_records_r">
-                    <div id="my_score">
-                        <!-- <img class="icon" src="./img/number_2.png">
-                        <img class="icon" src="./img/number_3.png">
-                        <img class="icon" src="./img/number_4.png">
-                        <img class="icon" src="./img/number_4.png"> -->
-                    </div>
-                    <div id="distance">
-                        <!-- <img class="icon" style="width: 20px;" src="./img/path_f_1.png">
-                        <img class="icon" src="./img/path_4.png">
-                        <img class="icon" src="./img/path_3.png"> -->
-                    </div>
-                </div>
-
+            <img class="w_m_score_icon" src="./img/maxScores.png" />
+            <div class="w_m_score">
+              <img class="icon" src="./img/number_1.png" />
+              <img class="icon" src="./img/number_2.png" />
+              <img class="icon" src="./img/number_3.png" />
+              <img class="icon" src="./img/number_4.png" />
             </div>
+          </div>
+          <div class="data_records_r">
+            <div id="my_score">
+              <!-- <img class="icon" src="./img/number_2.png">
+                            <img class="icon" src="./img/number_3.png">
+                            <img class="icon" src="./img/number_4.png">
+                            <img class="icon" src="./img/number_4.png"> -->
+            </div>
+            <div id="distance">
+              <!-- <img class="icon" style="width: 20px;" src="./img/path_f_1.png">
+                            <img class="icon" src="./img/path_4.png">
+                            <img class="icon" src="./img/path_3.png"> -->
+            </div>
+          </div>
         </div>
-
+      </div>
     </div>
+  </div>
 
-    <script src="./js/main.js"></script>
+  <script src="./js/main.js"></script>
 </body>
