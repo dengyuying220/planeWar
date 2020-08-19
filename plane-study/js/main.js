@@ -26,17 +26,68 @@ startBG.onclick = function () {
       }
       moveBullet(); //移动子弹
       createEmyPlane();
+      moveEmyPlane();
+      bulletCollide();
     }
   }, 300);
 };
 
+function bomb(bombPlane) {
+
+  bombPlane.className = 'bombPlane';
+  bombPlane.style.backgroundImage = "url(./img/wsparticle_06.png)";
+  bombPlane.style.backgroundPosition = "center";
+  bombPlane.style.backgroundRepeat = "no-repeat";
+  setTimeout(function () {
+    bombPlane.style.backgroundImage = "url(./img/wsparticle_07.png)";
+    console.log(1);
+  }, 200);
+  setTimeout(function () {
+    battleBG.removeChild(bombPlane);
+    console.log(2);
+  }, 300);
+}
+
+function bulletCollide() {
+  var emyPlanes = document.getElementsByClassName('emyPlane');
+  var myBullets = document.getElementsByClassName('myBullet');
+  for (var i = 0; i < emyPlanes.length; i++) {
+    for (var j = 0; j < myBullets.length; j++) {
+      var bLeft = parseInt(myBullets[j].style.left);
+      var bTop = parseInt(myBullets[j].style.top);
+      var epLeft = parseInt(emyPlanes[i].style.left);
+      var epTop = parseInt(emyPlanes[i].style.top);
+      if ((epLeft - bLeft) < 14 && (epLeft - bLeft) > -98) {
+        var dif = bTop - epTop;
+        if ((dif > 0) ? (dif < 76) : (dif > -32)) {
+          bomb(emyPlanes[i])
+          console.log('击中');
+        }
+      }
+    }
+  }
+}
+
+function moveEmyPlane() {
+  var emyPlanes = document.getElementsByClassName('emyPlane');
+  for (var i = 0; i < emyPlanes.length; i++) {
+    var top = parseInt(emyPlanes[i].style.top);
+    emyPlanes[i].style.top = top + emyPlanes[i].speed + 'px';
+    if (parseInt(emyPlanes[i].style.top) > 768) {
+      battleBG.removeChild(emyPlanes[i]);
+    }
+  }
+}
+
 function createEmyPlane() {
   var emyPlane = document.createElement('div');
   emyPlane.className = 'emyPlane';
-  if (distance % 30 === 0) {
+  if (distance % 5 === 0) {
     var x = Math.random() * (513 - 98) + 'px';
     emyPlane.style.left = x;
-    emyPlane.style.top = '10px';
+    emyPlane.style.top = '-10px';
+    emyPlane.speed = 5;
+    //emyPlane.hp = 1;
     battleBG.appendChild(emyPlane);
   }
 }
